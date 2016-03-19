@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qfactioncreator.cpp -->
+  <title>ActionCreator QML Type | QuickFlux 1.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">ActionCreator QML Type</h1>
+<span class="subtitle"></span>
+<!-- $$$ActionCreator-brief -->
+<p>Create message from signal then dispatch via <a href="qml-appdispatcher.html">AppDispatcher</a> <a href="#details">More...</a></p>
+<!-- @@@ActionCreator -->
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Import Statement:</td><td class="memItemRight bottomAlign"> import  .</td></tr></table></div><ul>
+<li><a href="qml-actioncreator-members.html">List of all members, including inherited members</a></li>
+</ul>
+<!-- $$$ActionCreator-description -->
+<a name="details"></a>
+<h2 id="details">Detailed Description</h2>
+</p>
+<p><a href="qml-actioncreator.html">ActionCreator</a> is a helper component that listens on its own signal, convert it to message then dispatch via <a href="qml-appdispatcher.html">AppDispatcher</a>. The message type will be same as the signal name. There has no limitation on number of arguments and data type.</p>
+<p>For example, you may declare an <a href="qml-actioncreator.html">ActionCreator</a> based component as:</p>
+<pre class="cpp">import <span class="type">QtQuick</span> <span class="number">2.0</span>
+import QuickFlux <span class="number">1.0</span>
+pragma singleton
+
+ActionCreator {
+   signal open(string url);
+}</pre>
+<p>It is equivalent to:</p>
+<pre class="cpp">import <span class="type">QtQuick</span> <span class="number">2.0</span>
+import QuickFlux <span class="number">1.0</span>
+pragma singleton
+
+Item {
+   function open(url) {
+     AppDispatcher<span class="operator">.</span>dispatch(“open”<span class="operator">,</span> {url: url});
+   }
+}</pre>
+<!-- @@@ActionCreator -->
+</body>
+</html>

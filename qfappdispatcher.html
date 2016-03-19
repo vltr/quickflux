@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- qfappdispatcher.cpp -->
+  <title>QFAppDispatcher Class | QuickFlux 1.0</title>
+  <link rel="stylesheet" type="text/css" href="style/offline.css" />
+</head>
+<body>
+<li>QFAppDispatcher</li>
+<div class="sidebar">
+<div class="toc">
+<h3><a name="toc">Contents</a></h3>
+<ul>
+<li class="level1"><a href="#public-functions">Public Functions</a></li>
+<li class="level1"><a href="#signals">Signals</a></li>
+<li class="level1"><a href="#static-public-members">Static Public Members</a></li>
+<li class="level1"><a href="#details">Detailed Description</a></li>
+</ul>
+</div>
+<div class="sidebar-content" id="sidebar-content"></div></div>
+<h1 class="title">QFAppDispatcher Class</h1>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> Header:</td><td class="memItemRight bottomAlign"> <span class="preprocessor">#include &lt;QFAppDispatcher&gt;</span>
+</td></tr><tr><td class="memItemLeft rightAlign topAlign"> Inherits:</td><td class="memItemRight bottomAlign"> </td></tr></table></div><ul>
+<li><a href="qfappdispatcher-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h2 id="public-functions">Public Functions</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qfappdispatcher.html#QFAppDispatcher">QFAppDispatcher</a></b>(QObject *<i> parent</i> = 0)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> </td><td class="memItemRight bottomAlign"><b><a href="qfappdispatcher.html#dtor.QFAppDispatcher">~QFAppDispatcher</a></b>()</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> int </td><td class="memItemRight bottomAlign"><b><a href="qfappdispatcher.html#addListener">addListener</a></b>(QFListener *<i> listener</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qfappdispatcher.html#dispatch">dispatch</a></b>(const QString &amp;<i> type</i>, const QVariant &amp;<i> message</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QQmlEngine * </td><td class="memItemRight bottomAlign"><b><a href="qfappdispatcher.html#engine">engine</a></b>() const</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qfappdispatcher.html#setEngine">setEngine</a></b>(QQmlEngine *<i> engine</i>)</td></tr>
+</table></div>
+<a name="signals"></a>
+<h2 id="signals">Signals</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> void </td><td class="memItemRight bottomAlign"><b><a href="qfappdispatcher.html#dispatched">dispatched</a></b>(QString<i> type</i>, QJSValue<i> message</i>)</td></tr>
+</table></div>
+<a name="static-public-members"></a>
+<h2 id="static-public-members">Static Public Members</h2>
+<div class="table"><table class="alignedsummary">
+<tr><td class="memItemLeft rightAlign topAlign"> QFAppDispatcher * </td><td class="memItemRight bottomAlign"><b><a href="qfappdispatcher.html#instance">instance</a></b>(QQmlEngine *<i> engine</i>)</td></tr>
+<tr><td class="memItemLeft rightAlign topAlign"> QObject * </td><td class="memItemRight bottomAlign"><b><a href="qfappdispatcher.html#singletonObject">singletonObject</a></b>(QQmlEngine *<i> engine</i>, QString<i> package</i>, int<i> versionMajor</i>, int<i> versionMinor</i>, QString<i> typeName</i>)</td></tr>
+</table></div>
+<a name="details"></a>
+<!-- $$$QFAppDispatcher-description -->
+<div class="descr">
+<h2 id="details">Detailed Description</h2>
+<p><a href="qfappdispatcher.html">QFAppDispatcher</a> is the C++ implementation of <a href="qml-appdispatcher.html">AppDispatcher</a> in QML scope. You may need this class to setup communication between C++ and QML.</p>
+<pre class="cpp"><span class="preprocessor">#include &quot;qfappdispatcher.h&quot;</span></pre>
+</div>
+<!-- @@@QFAppDispatcher -->
+<div class="func">
+<h2>Member Function Documentation</h2>
+<!-- $$$QFAppDispatcher[overload1]$$$QFAppDispatcherQObject* -->
+<h3 class="fn" id="QFAppDispatcher"><a name="QFAppDispatcher"></a>QFAppDispatcher::<span class="name">QFAppDispatcher</span>(<span class="type">QObject</span> *<i> parent</i> = 0)</h3>
+<!-- @@@QFAppDispatcher -->
+<!-- $$$~QFAppDispatcher[overload1]$$$~QFAppDispatcher -->
+<h3 class="fn" id="dtor.QFAppDispatcher"><a name="dtor.QFAppDispatcher"></a>QFAppDispatcher::<span class="name">~QFAppDispatcher</span>()</h3>
+<!-- @@@~QFAppDispatcher -->
+<!-- $$$addListener[overload1]$$$addListenerQFListener* -->
+<h3 class="fn" id="addListener"><a name="addListener"></a><span class="type">int</span> QFAppDispatcher::<span class="name">addListener</span>(<span class="type">QFListener</span> *<i> listener</i>)</h3>
+<p>It is private API. Do not use it.</p>
+<!-- @@@addListener -->
+<!-- $$$dispatch[overload1]$$$dispatchconstQString&constQVariant& -->
+<h3 class="fn" id="dispatch"><a name="dispatch"></a><span class="type">void</span> QFAppDispatcher::<span class="name">dispatch</span>(const <span class="type">QString</span> &amp;<i> type</i>, const <span class="type">QVariant</span> &amp;<i> message</i>)</h3>
+<p>Dispatch a message with type via the <a href="qml-appdispatcher.html">AppDispatcher</a>. The message will be placed on a queue and delivery via the &quot;dispatched&quot; signal. Listeners may listen on the &quot;dispatched&quot; signal directly, or using helper components like <a href="qml-applistener.html">AppListener</a> / <a href="qml-appscript.html">AppScript</a> to capture signal.</p>
+<!-- @@@dispatch -->
+<!-- $$$dispatched[overload1]$$$dispatchedQStringQJSValue -->
+<h3 class="fn" id="dispatched"><a name="dispatched"></a><code>[signal] </code><span class="type">void</span> QFAppDispatcher::<span class="name">dispatched</span>(<span class="type">QString</span><i> type</i>, <span class="type">QJSValue</span><i> message</i>)</h3>
+<p>This signal is emitted when a message is ready to dispatch by <a href="qml-appdispatcher.html">AppDispatcher</a>.</p>
+<!-- @@@dispatched -->
+<!-- $$$engine[overload1]$$$engine -->
+<h3 class="fn" id="engine"><a name="engine"></a><span class="type">QQmlEngine</span> * QFAppDispatcher::<span class="name">engine</span>() const</h3>
+<p>Obtain the associated engine to this dispatcher.</p>
+<p><b>See also </b><a href="qfappdispatcher.html#setEngine">setEngine</a>().</p>
+<!-- @@@engine -->
+<!-- $$$instance[overload1]$$$instanceQQmlEngine* -->
+<h3 class="fn" id="instance"><a name="instance"></a><code>[static] </code><span class="type"><a href="qfappdispatcher.html#QFAppDispatcher">QFAppDispatcher</a></span> * QFAppDispatcher::<span class="name">instance</span>(<span class="type">QQmlEngine</span> *<i> engine</i>)</h3>
+<p>Obtain the singleton instance of <a href="qml-appdispatcher.html">AppDispatcher</a> for specific <i>engine</i></p>
+<!-- @@@instance -->
+<!-- $$$setEngine[overload1]$$$setEngineQQmlEngine* -->
+<h3 class="fn" id="setEngine"><a name="setEngine"></a><span class="type">void</span> QFAppDispatcher::<span class="name">setEngine</span>(<span class="type">QQmlEngine</span> *<i> engine</i>)</h3>
+<p>Set the associated <i>engine</i>. It is private API. Do not call it.</p>
+<p><b>See also </b><a href="qfappdispatcher.html#engine">engine</a>().</p>
+<!-- @@@setEngine -->
+<!-- $$$singletonObject[overload1]$$$singletonObjectQQmlEngine*QStringintintQString -->
+<h3 class="fn" id="singletonObject"><a name="singletonObject"></a><code>[static] </code><span class="type">QObject</span> * QFAppDispatcher::<span class="name">singletonObject</span>(<span class="type">QQmlEngine</span> *<i> engine</i>, <span class="type">QString</span><i> package</i>, <span class="type">int</span><i> versionMajor</i>, <span class="type">int</span><i> versionMinor</i>, <span class="type">QString</span><i> typeName</i>)</h3>
+<p><i>engine</i> QQmlEngine instance</p>
+<p><i>package</i> The package name of the singleton object</p>
+<p><i>versionMajor</i> The major version no. of the singleton object</p>
+<p><i>versionMinor</i> The minor version no. of the singleton object</p>
+<p><i>typeName</i> The name of the singleton object</p>
+<p>Obtain a singleton object from a package for specific QQmlEngine instance. It is useful when you need to get a singleton Actions object from C++.</p>
+<!-- @@@singletonObject -->
+</div>
+</body>
+</html>

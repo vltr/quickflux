@@ -9,6 +9,7 @@
 #include "qffilter.h"
 #include "qfkeytable.h"
 #include "qfactioncreator.h"
+#include "qfload.h"
 
 static QObject *appDispatcherProvider(QQmlEngine *engine, QJSEngine *scriptEngine)
 {
@@ -34,4 +35,13 @@ static void registerTypes()
     qmlRegisterType<QFActionCreator>("QuickFlux", 1, 0, "ActionCreator");
 }
 
+#ifndef QF_NO_STARTUP
 Q_COREAPP_STARTUP_FUNCTION(registerTypes)
+#endif
+
+void QuickFlux::initialize()
+{
+#ifdef QF_NO_STARTUP
+    registerTypes();
+#endif
+}

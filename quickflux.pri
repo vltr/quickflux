@@ -19,6 +19,10 @@ HEADERS += \
     $$PWD/QFAppDispatcher \
     $$PWD/QFKeyTable
 
+defined(QF_NO_STARTUP):{
+    HEADERS += $$PWD/qfload.h
+}
+
 SOURCES += \
     $$PWD/qfapplistener.cpp \
     $$PWD/qfappdispatcher.cpp \
